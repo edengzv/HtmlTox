@@ -1,6 +1,6 @@
 # HtmlTox
-A PHP extension, which convert HTML to pdf and image.
-This extension is based on [wkhtmltopdf](http://wkhtmltopdf.org/) and inspired by [zhtmltopdf](https://github.com/shenzhe/zhtmltopdf)
+- A PHP extension, which convert HTML to pdf and image.
+- This extension is based on [wkhtmltopdf](http://wkhtmltopdf.org/) and inspired by [zhtmltopdf](https://github.com/shenzhe/zhtmltopdf)
 
 #Install
 
@@ -31,23 +31,30 @@ extension="htmltox.so"
 
 if you can see `htmltox` ,it means that the htmltox module has been successfully installed,enjoy it!
 
-###Usage
-```
+#Usage
+##convert html to pdf
+```php
 <?php
-$obj = new htmltox();
+$foo = new htmltox();
 $global_settings_pdf = array('out'=>'hdoj.pdf','imageQuantity'=>'92');
 $object_settings_pdf = array(
     array('page' => 'acm.hdu.edu.cn'),
     array('useLocalLinks' => true),
     array('useExternalLinks' => true)
 );
-$obj->htmltopdf($global_settings_pdf,$object_settings_pdf);
-
-$global_settings_image = array('out'=>'hdoj.jpg','in'=>'acm.hdu.edu.cn');
-$obj->htmltoimg($global_settings_image);
+$foo->htmltopdf($global_settings_pdf,$object_settings_pdf);
 ```
 
-For more global settings and object settings for wkhtmltopdf,Please refer to[wkhtmltopdf docs](http://wkhtmltopdf.org/libwkhtmltox/pagesettings.html)
+##convert html to image
+```php
+<?php
+$foo = new htmltox();
+$global_settings_image = array('out'=>'hdoj.jpg','in'=>'acm.hdu.edu.cn');
+$foo->htmltoimg($global_settings_image);
+```
+
+#Important
+More global settings and object settings for wkhtmltopdf,please refer to [wkhtmltopdf docs](http://wkhtmltopdf.org/libwkhtmltox/pagesettings.html)
 
 
 
