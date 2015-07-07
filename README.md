@@ -1,15 +1,16 @@
 # HtmlTox
+##introduction
 - A PHP extension, which convert HTML to pdf and image.
 - This extension is based on [wkhtmltopdf](http://wkhtmltopdf.org/) and inspired by [zhtmltopdf](https://github.com/shenzhe/zhtmltopdf)
 
-#Install
+##Install
 
-##First 
+###First 
 ```
 git clone https://github.com/KanTian/HtmlTox
 ```
 
-##Second
+###Second
 ```
 cd Htmltox
 phpize
@@ -20,19 +21,19 @@ sudo make install
 > now,you will find the htmltox.so in `Htmltox/modules/`
 > so you can also move it to your own php extension dir manually
 
-##Third
+###Third
 in your php.ini file,add the following line,just as you install other php modules:
 ```
 extension="htmltox.so"
 ```
 
-##Forth
+###Forth
 >php -m
 
 if you can see `htmltox` ,it means that the htmltox module has been successfully installed,enjoy it!
 
-#Usage
-##convert html to pdf
+##Usage
+###convert html to pdf
 ```php
 <?php
 $foo = new htmltox();
@@ -45,7 +46,7 @@ $object_settings_pdf = array(
 $foo->htmltopdf($global_settings_pdf,$object_settings_pdf);
 ```
 
-##convert html to image
+###convert html to image
 ```php
 <?php
 $foo = new htmltox();
@@ -53,8 +54,8 @@ $global_settings_image = array('out'=>'hdoj.jpg','in'=>'acm.hdu.edu.cn');
 $foo->htmltoimg($global_settings_image);
 ```
 
-#Important
-More global settings and object settings for wkhtmltopdf,please refer to [wkhtmltopdf docs](http://wkhtmltopdf.org/libwkhtmltox/pagesettings.html)
+##Important
+The above examples just provide a basic usage of this module,in order to make full use of it,you may refer to [wkhtmltopdf docs](http://wkhtmltopdf.org/libwkhtmltox/pagesettings.html) to get more global settings and object settings -:)
 
 
 
