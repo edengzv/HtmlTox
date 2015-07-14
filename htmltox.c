@@ -12,7 +12,7 @@
   | obtain it through the world-wide-web, please send a note to          |
   | license@php.net so we can mail you a copy immediately.               |
   +----------------------------------------------------------------------+
-  | Author:                                                              |
+  | Author: edeng.zheng@gmail.com                                        |
   +----------------------------------------------------------------------+
 */
 
@@ -182,14 +182,12 @@ void htmltox_set_params(void *settings, fp set_function, zval *params){
 
 ZEND_METHOD(htmltox,__construct)
 {
-	//	php_printf("this is __construct method");
 	wkhtmltopdf_init(0);
 }
 
 ZEND_METHOD(htmltox,__destruct)
 {
 	wkhtmltopdf_deinit();
-	//	php_printf("this is __destruct");
 }
 
 PHP_METHOD(htmltox,htmltopdf);
@@ -285,36 +283,6 @@ PHP_MINFO_FUNCTION(htmltox)
 	*/
 }
 /* }}} */
-
-
-/* Remove the following function when you have successfully modified config.m4
-   so that your module can be compiled into PHP, it exists only for testing
-   purposes. */
-
-/* Every user-visible function in PHP should document itself in the source */
-/* {{{ proto string confirm_htmltox_compiled(string arg)
-   Return a string to confirm that the module is compiled in */
-/*PHP_FUNCTION(confirm_htmltox_compiled)
-{
-	char *arg = NULL;
-	int arg_len, len;
-	char *strg;
-
-	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "s", &arg, &arg_len) == FAILURE) {
-		return;
-	}
-
-	len = spprintf(&strg, 0, "Congratulations! You have successfully modified ext/%.78s/config.m4. Module %.78s is now compiled into PHP.", "htmltox", arg);
-	RETURN_STRINGL(strg, len, 0);
-}*/
-/* }}} */
-/* The previous line is meant for vim and emacs, so it can correctly fold and 
-   unfold functions in source code. See the corresponding marks just before 
-   function definition, where the functions purpose is also documented. Please 
-   follow this convention for the convenience of others editing your code.
-*/
-
-
 
 
 /*
